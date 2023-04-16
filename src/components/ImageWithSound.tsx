@@ -12,7 +12,13 @@ export function ImageWithSound(props: Props) {
 		console.log('play')
 		if (!props.audio)
 			return;
-		new Audio(props.audio).play();
+
+		const first = new Audio(props.audio);
+		// const second = new Audio("audio/duck-quack.mp3");
+		first.addEventListener('ended', function(){
+			// second.play();
+		})
+		first.play();
 	}
 
 	return (
