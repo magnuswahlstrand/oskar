@@ -1,6 +1,7 @@
 ---
 // Component imports
 import {Layout} from "@globals"
+import {ImageWithSound} from "../components/ImageWithSound";
 
 const imageGroups = [
 	{
@@ -9,6 +10,7 @@ const imageGroups = [
 			{
 				name: "Ambulance",
 				url: "https://upload.wikimedia.org/wikipedia/commons/7/76/Swedish_ambulance_in_Lund.jpg",
+				audio: "https://upload.wikimedia.org/wikipedia/commons/8/81/Ambulance_Sounds2.wav",
 			},
 			{
 				name: "Firetruck",
@@ -38,31 +40,42 @@ const imageGroups = [
 			{
 				name: "Cat",
 				url: "https://upload.wikimedia.org/wikipedia/commons/b/b6/Felis_catus-cat_on_snow.jpg",
+				audio: "https://upload.wikimedia.org/wikipedia/commons/0/0c/Meow_domestic_cat.ogg"
 			},
 			{
 				name: "Cow",
 				url: "https://upload.wikimedia.org/wikipedia/commons/0/0c/Cow_female_black_white.jpg",
+				audio: "audio/cow.mp3"
 			},
 			{
 				name: "Horse",
 				url: "https://upload.wikimedia.org/wikipedia/commons/f/f7/Mangalarga_Marchador_Conforma%C3%A7%C3%A3o.jpg",
+				audio: "audio/horse.mp3"
 			},
 			{
 				name: "Duck",
 				url: "https://upload.wikimedia.org/wikipedia/commons/2/24/Male_mallard_duck_2.jpg",
+				audio: "audio/duck-quack.mp3"
 			},
 			{
 				name: "Dog",
 				url: "https://upload.wikimedia.org/wikipedia/commons/b/bd/Golden_Retriever_Dukedestiny01_drvd.jpg",
+				audio: "https://upload.wikimedia.org/wikipedia/commons/a/a2/Barking_of_a_dog.ogg",
 			},
 			{
 				name: "Fish",
 				url: "https://upload.wikimedia.org/wikipedia/commons/d/d5/Detailed_underwater_photo_of_smallmouth_bass_fish_micropterus_dolomieu.jpg",
+				audio: "audio/bubble.mp3"
+			},
+			{
+				name: "Sheep",
+				url: "https://upload.wikimedia.org/wikipedia/commons/9/96/Sheep_in_Iceland.jpg",
+				audio: "audio/sheep.mp3"
 			},
 		]
 	},
 	{
-		name: "Things",
+		name: "Andra saker",
 		images: [
 			{
 				name: "Spade",
@@ -97,11 +110,7 @@ const imageGroups = [
 							<ul class="grid grid-cols-2 gap-4">
 								{group.images.map(image =>
 									<li class="flex flex-col items-center space-y-2">
-										<img
-											src={image.url}
-											alt={image.name}
-											class="rounded-lg"
-										/>
+										<ImageWithSound url={image.url} name={image.name} audio={image.audio} client:load />
 									</li>
 								)}
 							</ul>
