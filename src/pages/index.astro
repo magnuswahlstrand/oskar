@@ -60,11 +60,24 @@ const imageGroups = [
 				url: "https://upload.wikimedia.org/wikipedia/commons/d/d5/Detailed_underwater_photo_of_smallmouth_bass_fish_micropterus_dolomieu.jpg",
 			},
 		]
+	},
+	{
+		name: "Things",
+		images: [
+			{
+				name: "Spade",
+				url: "https://upload.wikimedia.org/wikipedia/commons/f/f4/Toy_spade_%28AM_1996.165.134-2%29.jpg",
+			},
+			{
+				name: "Bucket",
+				url: "https://upload.wikimedia.org/wikipedia/commons/3/31/Balde.PNG",
+			},
+		]
 	}
 ]
 ---
 
-<Layout title="Astro PWA Starter">
+<Layout title="Oskar lär sig">
 	<section class="p-6 flex-1 flex flex-col justify-between">
 		<!-- Welcome -->
 		<div
@@ -81,7 +94,7 @@ const imageGroups = [
 					{imageGroups.map(group =>
 						<li class="flex flex-col space-y-2">
 							<h2 class="text-xl font-semibold">{group.name}</h2>
-							<ul class="grid md:grid-cols-2 gap-4">
+							<ul class="grid grid-cols-2 gap-4">
 								{group.images.map(image =>
 									<li class="flex flex-col items-center space-y-2">
 										<img
@@ -98,12 +111,8 @@ const imageGroups = [
 			</div>
 		</div>
 
-		<!-- Twitter -->
-		<div class="flex justify-center">
+		<div class="flex justify-center pt-2">
 			<span
-				href="https://twitter.com/shaunchander"
-				target="_blank"
-				rel="noopener noreferrer"
 				class="relative inline-flex items-center rounded-full bg-gray-100 p-4 transition duration-300 ease-in-out hover:-translate-y-2 focus:-translate-y-2 group hover:text-white focus:text-white"
 			>
 				<div class="flex items-center space-x-4 relative z-10">
