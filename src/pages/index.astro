@@ -10,11 +10,12 @@ const imageGroups = [
 			{
 				name: "Ambulance",
 				url: "https://upload.wikimedia.org/wikipedia/commons/7/76/Swedish_ambulance_in_Lund.jpg",
-				audio: "https://upload.wikimedia.org/wikipedia/commons/8/81/Ambulance_Sounds2.wav",
+				audio: ["https://upload.wikimedia.org/wikipedia/commons/8/81/Ambulance_Sounds2.wav", "audio/words/ambulans.mp3"
 			},
 			{
 				name: "Firetruck",
 				url: "https://upload.wikimedia.org/wikipedia/commons/0/00/Scania_Firetruck.jpg",
+				audio: "audio/words/brandbil.mp3"
 			},
 			{
 				name: "Police car",
@@ -40,7 +41,7 @@ const imageGroups = [
 			{
 				name: "Helicopter",
 				url: "https://upload.wikimedia.org/wikipedia/commons/7/78/LAPD_Bell_206_Jetranger.jpg",
-				audio: "https://upload.wikimedia.org/wikipedia/commons/f/fd/Helicopter_flying_overhead.wav",
+				audio: ["https://upload.wikimedia.org/wikipedia/commons/f/fd/Helicopter_flying_overhead.wav","audio/words/helikopter.mp3"]]
 			},
 		]
 	},
@@ -50,37 +51,42 @@ const imageGroups = [
 			{
 				name: "Cat",
 				url: "https://upload.wikimedia.org/wikipedia/commons/b/b6/Felis_catus-cat_on_snow.jpg",
-				audio: "https://upload.wikimedia.org/wikipedia/commons/0/0c/Meow_domestic_cat.ogg"
+				audio: ["https://upload.wikimedia.org/wikipedia/commons/0/0c/Meow_domestic_cat.ogg", "audio/words/katt.mp3"]
 			},
 			{
 				name: "Cow",
 				url: "https://upload.wikimedia.org/wikipedia/commons/0/0c/Cow_female_black_white.jpg",
-				audio: "audio/cow.mp3"
+				audio: ["audio/cow.mp3", "audio/words/ko.mp3"]
 			},
 			{
 				name: "Horse",
 				url: "https://upload.wikimedia.org/wikipedia/commons/f/f7/Mangalarga_Marchador_Conforma%C3%A7%C3%A3o.jpg",
-				audio: "audio/horse.mp3"
+				audio: ["audio/horse.mp3", "audio/words/hast.mp3"]
 			},
 			{
 				name: "Duck",
 				url: "https://upload.wikimedia.org/wikipedia/commons/2/24/Male_mallard_duck_2.jpg",
-				audio: "audio/duck-quack.mp3"
+				audio: ["audio/duck-short.mp3","audio/words/anka.mp3"]
 			},
 			{
 				name: "Dog",
 				url: "https://upload.wikimedia.org/wikipedia/commons/b/bd/Golden_Retriever_Dukedestiny01_drvd.jpg",
-				audio: "https://upload.wikimedia.org/wikipedia/commons/a/a2/Barking_of_a_dog.ogg",
+				audio: ["https://upload.wikimedia.org/wikipedia/commons/a/a2/Barking_of_a_dog.ogg", "audio/words/hund.mp3"]
 			},
 			{
 				name: "Fish",
 				url: "https://upload.wikimedia.org/wikipedia/commons/d/d5/Detailed_underwater_photo_of_smallmouth_bass_fish_micropterus_dolomieu.jpg",
-				audio: "audio/bubble.mp3"
+				audio: ["audio/bubble.mp3", "audio/words/fisk.mp3"]
 			},
 			{
 				name: "Sheep",
 				url: "https://upload.wikimedia.org/wikipedia/commons/9/96/Sheep_in_Iceland.jpg",
-				audio: "audio/sheep.mp3"
+				audio: ["audio/sheep.mp3", "audio/words/far.mp3"]
+			},
+			{
+				name: "Frog",
+				url: "https://commons.wikimedia.org/wiki/File:Green_Tree_Frog_(Litoria_caerulea).jpg",
+				audio: ["https://upload.wikimedia.org/wikipedia/commons/9/9f/Single_Frog_Croak.oga"]
 			},
 		]
 	},
@@ -90,10 +96,12 @@ const imageGroups = [
 			{
 				name: "Spade",
 				url: "https://upload.wikimedia.org/wikipedia/commons/f/f4/Toy_spade_%28AM_1996.165.134-2%29.jpg",
+				audio: "audio/words/spade.mp3"
 			},
 			{
 				name: "Bucket",
 				url: "https://upload.wikimedia.org/wikipedia/commons/3/31/Balde.PNG",
+				audio: "audio/words/hink.mp3"
 			},
 		]
 	}
@@ -120,7 +128,8 @@ const imageGroups = [
 							<ul class="grid grid-cols-2 gap-4">
 								{group.images.map(image =>
 									<li class="flex flex-col items-center space-y-2">
-										<ImageWithSound url={image.url} name={image.name} audio={image.audio} client:load />
+										<ImageWithSound url={image.url} name={image.name} audio={image.audio}
+														client:load/>
 									</li>
 								)}
 							</ul>
